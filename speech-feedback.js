@@ -1,5 +1,5 @@
-import {normalize} from './core.js?v=2.0.1';
-import {wordCoach} from './teaching.js?v=2.0.1';
+import {normalize} from './core.js?v=3.0.0';
+import {wordCoach} from './teaching.js?v=3.0.0';
 
 export function canonical(text) {
   return normalize(String(text).replace(/\bi['’]m\b/gi,'I am').replace(/\bdon['’]t\b/gi,'do not').replace(/\byou['’]re\b/gi,'you are').replace(/\bwhere['’]s\b/gi,'where is').replace(/\bit['’]s\b/gi,'it is'))

@@ -1,0 +1,43 @@
+رفيق — مدرّب الأصوات التجريبي / Rafiq experimental sound coach, version 3.0.0
+
+This free feature runs acoustic phoneme recognition locally in the browser.
+The audio and results are not uploaded or stored persistently by Rafiq.
+It evaluates only the initial consonant of the listed practice words. It is not
+a validated pronunciation assessment, a calibrated score, or a whole-word grade.
+Thresholds and Arabic coaching are authored for this application, not supplied
+or endorsed by the model's authors. The model can misrecognize fluent speech.
+
+ZIPA model and vocabulary:
+ZIPA: A family of efficient speech models for multilingual phone recognition.
+Project and author information: https://github.com/lingjzhu/zipa
+Research paper: https://aclanthology.org/2025.acl-long.961/
+Model: anyspeech/zipa-small-crctc-500k (64M parameters, INT8 ONNX).
+https://huggingface.co/anyspeech/zipa-small-crctc-500k
+Revision: dfe87c97662606fa6db90ad06f627d4363314744
+Weights SHA-256: d0e28b68164e8b1fbd6105100c01798828aa0855000ce9bbbd1a2cec233adf13
+The published INT8 weights and tokens are used unchanged. Rafiq does not fine-tune them.
+Model weights license: Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+https://creativecommons.org/licenses/by/4.0/legalcode
+The ZIPA repository's MIT license is distinct from the weights' CC BY 4.0 license.
+The NS/700k model with a different license is not used here.
+
+ONNX Runtime Web 1.31.1:
+Copyright (c) Microsoft Corporation. MIT License.
+https://github.com/microsoft/onnxruntime/tree/v1.31.1
+Full license: vendor/ort/LICENSE.txt
+Runtime files are vendored unchanged from the onnxruntime-web 1.31.1 npm package.
+
+Filterbank implementation:
+phoneme-fbank.js is a JavaScript implementation informed by the Apache-2.0
+standalone Kaldi/Lhotse feature extractor in Thomas Guettler's Phoneme Party:
+https://github.com/guettli/pp/blob/main/wasm/kaldi-fbank/fbank-standalone.zig
+Changes: JavaScript FFT/filterbank implementation; fixed 16 kHz / 80-band settings;
+no Zig/WASM extractor is redistributed. Apache-2.0 license: vendor/APACHE-2.0.txt
+Numeric equivalence to Python Lhotse has not been independently established.
+
+Verification limitations:
+Synthetic reference/contrast recordings are engineering checks, not evidence of
+accuracy for Arabic-speaking learners. No human pronunciation accuracy rate or
+iPhone 13 Pro performance guarantee is claimed. This version needs real-device
+and consenting learner evaluation before broader phoneme diagnosis is appropriate.

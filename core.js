@@ -1,5 +1,5 @@
-import {lessons,extraWords} from './lessons.js?v=2.0.1';
-import {lessonSequence} from './teaching.js?v=2.0.1';
+import {lessons,extraWords} from './lessons.js?v=3.0.0';
+import {lessonSequence} from './teaching.js?v=3.0.0';
 export const STORAGE_KEY='rafiq-progress-v1';
 export function defaults(){return {version:2,completed:[],current:1,step:0,cadence:2,days:[1,4],time:'18:00',rate:.75,review:{},needsPractice:[]};}
 export function sanitize(value){
