@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f4eb"><meta name="description" content="رفيق: دروس إنجليزية للمبتدئات، شرح عربي بسيط، واستماع وتدريب على مهل.">
+  <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="رفيق">
+  <link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./style.css"><title>رفيق · الإنجليزية على مهل</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">انتقلي إلى المحتوى</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#home" aria-label="رفيق، الرئيسية"><img src="./icon.svg" alt="" width="46" height="46"><span>رفيق<small>الإنجليزية على مهل</small></span></a>
+      <nav aria-label="التنقل الرئيسي">
+        <button data-page="home" class="nav-item active"><span aria-hidden="true">⌂</span>مع رفيق</button>
+        <button data-page="lessons" class="nav-item"><span aria-hidden="true">▤</span>دروسي</button>
+        <button data-page="review" class="nav-item"><span aria-hidden="true">↻</span>مراجعتي</button>
+        <button data-page="settings" class="nav-item"><span aria-hidden="true">⚙</span>إعداداتي</button>
+      </nav>
+      <div class="sidebar-bottom"><p>خطوة صغيرة، كل مرة.</p><button class="text-button" data-action="install">أضيفي رفيق إلى هاتفكِ <span aria-hidden="true">↗</span></button><small>دروس مجانية · بلا اشتراك</small></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><span class="top-greeting">مساحة صغيرة للتعلّم، على راحتكِ</span><button class="help-button" data-action="help" aria-label="مساعدة في استخدام رفيق">؟</button></header>
+      <main id="main" tabindex="-1"></main>
+      <footer class="page-footer">شرح بالعربية، وكلمة إنجليزية في كل خطوة.</footer>
+    </div>
+  </div>
+  <div id="notice" class="notice" role="status" hidden></div>
+  <dialog id="modal"><div id="modal-content"></div><button class="button secondary close-dialog" data-action="close">حسنًا، فهمت</button></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

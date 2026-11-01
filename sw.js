@@ -1,0 +1,5 @@
+const CACHE='rafiq-v1';
+const FILES=['./','./index.html','./style.css','./app.js','./core.js','./voice.js','./lessons.js','./icon.svg','./manifest.webmanifest','./apple-touch-icon.png','./icon-192.png','./icon-512.png'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES))));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('rafiq-')&&key!==CACHE).map(key=>caches.delete(key))))));
+self.addEventListener('fetch',event=>{const url=new URL(event.request.url);if(event.request.method!=='GET'||url.origin!==self.location.origin)return;const allowed=FILES.some(path=>new URL(path,self.location.href).pathname===url.pathname);if(!allowed||url.search)return;event.respondWith(fetch(event.request).then(response=>{if(response.ok&&response.type==='basic'&&!response.redirected){const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));}return response;}).catch(()=>caches.match(event.request).then(response=>response||new Response('Offline',{status:503}))));});
