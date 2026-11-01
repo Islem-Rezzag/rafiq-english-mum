@@ -1,5 +1,5 @@
-import {teachingPlan,meaningChoices,buildTokens,currentTarget} from './teaching.js';
-import {lessonSteps} from './core.js';
+import {teachingPlan,meaningChoices,buildTokens,currentTarget} from './teaching.js?v=2.0.1';
+import {lessonSteps} from './core.js?v=2.0.1';
 export const escape = text=>String(text??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const english=text=>`<span lang="en" dir="ltr">${escape(text)}</span>`;
 const audioButtons=(label='اسمعي العبارة')=>`<div class="button-row"><button class="button" data-action="listen">◖)) ${label}</button><button class="button secondary" data-action="slow">ببطء أكثر</button><button class="text-button" data-action="stop">إيقاف الصوت</button></div>`;

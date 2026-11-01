@@ -1,10 +1,10 @@
-import {lessons} from './lessons.js';
-import {loadState,saveState,normalize,lessonSteps,completeLesson,reviewItems,reviewResult,tutorReply,nextSession,calendarFile,chatgptPrompt,defaults} from './core.js';
-import {Voice} from './voice.js';
-import {PracticeRecorder} from './recorder.js';
-import {teachingPlan,currentTarget,meaningChoices,buildTokens} from './teaching.js';
-import {assessAnswer} from './speech-feedback.js';
-import {lessonView,feedbackView} from './lesson-view.js';
+import {lessons} from './lessons.js?v=2.0.1';
+import {loadState,saveState,normalize,lessonSteps,completeLesson,reviewItems,reviewResult,tutorReply,nextSession,calendarFile,chatgptPrompt,defaults} from './core.js?v=2.0.1';
+import {Voice} from './voice.js?v=2.0.1';
+import {PracticeRecorder} from './recorder.js?v=2.0.1';
+import {teachingPlan,currentTarget,meaningChoices,buildTokens} from './teaching.js?v=2.0.1';
+import {assessAnswer} from './speech-feedback.js?v=2.0.1';
+import {lessonView,feedbackView} from './lesson-view.js?v=2.0.1';
 const $=selector=>document.querySelector(selector);
 const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let storage;try{storage=window.localStorage;}catch{storage={getItem:()=>null,setItem:()=>{throw Error('Unavailable');}};}
